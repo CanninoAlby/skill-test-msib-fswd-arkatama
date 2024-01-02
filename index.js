@@ -10,7 +10,8 @@ const rl = readline.createInterface({
 
 rl.question('Enter data in the format NAMA USIA KOTA: ', (answer) => {
     let name = '';
-    let words = answer.split(' ');
+    let words = answer.replace(/tahun|thn|th/i, '').split(' ');
+    words = words.filter(word => word !== "");
     let counter=0;
     for (counter; counter < words.length; ++counter) {
         if (!isNaN(words[counter][0])) {
@@ -19,8 +20,8 @@ rl.question('Enter data in the format NAMA USIA KOTA: ', (answer) => {
         name += words[counter] + ' ';
     }
     name = name.trim().toUpperCase();
-    let city = words.pop().toUpperCase();
-    let age = parseInt(words.slice(counter).join(' ').replace(/tahun|thn|th/i, ''));
+    let city = words.slice(counter+1).join(' ').toUpperCase();
+    let age = parseInt(words.slice(counter));
 
     const connection = mysql.createConnection({
         host: process.env.DB_HOST,
