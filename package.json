@@ -1,19 +1,13 @@
 {
-  "name": "technical",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CanninoAlby/skill-test-msib-fswd-arkatama.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CanninoAlby/skill-test-msib-fswd-arkatama/issues"
-  },
-  "homepage": "https://github.com/CanninoAlby/skill-test-msib-fswd-arkatama#readme"
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.6.1",
+        "laravel-vite-plugin": "^1.0.0",
+        "vite": "^5.0.0"
+    }
 }
